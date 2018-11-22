@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import FacebookLogin from 'react-facebook-login';
-import axios from "axios"
+import Cities from "./Components/Cities/Cities"
 class App extends Component {
   state = {
     isLoggedIn: false,
@@ -9,28 +9,10 @@ class App extends Component {
     name: '',
     email: '',
     avatar: '',
-    city: '',
-    cityOptions: []
   }
 
 
-  handleChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-    this.serachCity()
-  }
 
-  serachCity = (e) => {
-    axios.get(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=EoCcGueM84v66bmsyFVbPZWRiGts100L&q=${this.state.city}`, {
-    }).then(response => {
-      console.log(response)
-    })
-  }
-
-  handlelogout = () => {
-    this.clearState()
-  }
   componentClicked = () => {
     console.log("clicked")
   }
@@ -47,19 +29,21 @@ class App extends Component {
     if (this.state.isLoggedIn) {
       return (
         <div className="profile">
-
-          <div className="header">
-          <img src={this.state.avatar} alt="avatar face" />
-          <h1>Welcome {" " + this.state.name}</h1>
-          <button onClick={this.handlelogout}>Logout</button>
-          </div>
           <div className="profile--
             list">
-            <form>
+            {/* <form>
               <label>Enter your city</label>
               <input onChange={this.handleChange} type="text" name='city' placeholder="search city"></input>
-            </form>
+            </form> */}
           </div>
+          <nav className="navbar">
+          <span><img src={this.state.avatar} alt="avatar face" /></span>
+            <li className="navbar--list">Hello, {this.state.name}</li>
+            {/* <li className="navbar--list"></li> */}
+          </nav>
+          <section>
+          <Cities></Cities>
+          </section>
         </div>
       )
 

@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+body {}
+
 /**
  * Profile header
  */
@@ -11,10 +13,29 @@
   flex-direction: row;
 }
 
-.header img {
+.navbar img {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
+  border: 3px solid #D61111;
 }
 
-.profile--list {}
+.navbar {
+  display: flex;
+  flex-direction: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 3rem;
+  background: #01161E;
+}
+
+.navbar li {
+  list-style: none;
+  color: white;
+  font-size: 30px;
+}
+
+/**
+ * search by city
+ */
