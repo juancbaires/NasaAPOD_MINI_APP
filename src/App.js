@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import FacebookLogin from 'react-facebook-login';
 import Cities from "./Components/APOD/APOD"
+const FACEBOOK_KEY = process.env.REACT_APP_FACEBOOK_KEY
 class App extends Component {
   state = {
     isLoggedIn: false,
@@ -46,7 +47,7 @@ class App extends Component {
     } else {
       
       facebookContent = (<FacebookLogin
-        appId="2049150265148471"
+        appId={FACEBOOK_KEY}
         autoLoad={true}
         fields="name,email,picture"
         onClick={this.componentClicked}

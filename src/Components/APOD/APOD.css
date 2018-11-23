@@ -64,15 +64,18 @@ img {
 
 i {
     background-color: #3b5998;
-    padding: 25px;
+    padding: 15px;
     border: 1px solid white;
-    border-radius: 5px;
+    border-radius: 50%;
     margin-bottom: 5px;
     align-self: center;
-    font-size: 34px;
+    font-size: 30px;
 }
 
 i::before {
-    color: white !important;
-    border-radius: 50%;
+    color: white !important
+}
+
+i:hover {
+    background-color: #273d6d;
 }
