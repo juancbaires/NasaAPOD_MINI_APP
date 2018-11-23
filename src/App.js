@@ -4,6 +4,8 @@ import FacebookLogin from 'react-facebook-login';
 import Cities from "./Components/APOD/APOD"
 const FACEBOOK_KEY = process.env.REACT_APP_FACEBOOK_KEY
 class App extends Component {
+
+  // Setting state to for signing in purposes and personal facebook info
   state = {
     isLoggedIn: false,
     userID: '',
@@ -12,7 +14,7 @@ class App extends Component {
     avatar: '',
   }
 
-// This funtion is to login and retrieve personal facebook information
+  // This funtion is to login and retrieve personal facebook information
   componentClicked = () => {
     console.log("clicked")
   }
@@ -30,15 +32,14 @@ class App extends Component {
     if (this.state.isLoggedIn) {
       return (
         <div className="profile">
-          <div className="profile--
-            list">
+          <div className="profile-- list">
           </div>
           <nav className="navbar">
-          <span><img src={this.state.avatar} alt="avatar face" /></span>
+            <span><img src={this.state.avatar} alt="avatar face" /></span>
             <li className="navbar--list">Hello, {this.state.name}</li>
           </nav>
           <section>
-          <Cities></Cities>
+            <Cities></Cities>
           </section>
         </div>
       )
@@ -51,7 +52,7 @@ class App extends Component {
         fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />)
-        
+
     }
     return (
       //rendered if statement from above
