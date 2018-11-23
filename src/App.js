@@ -12,8 +12,7 @@ class App extends Component {
     avatar: '',
   }
 
-
-
+// This funtion is to login and retrieve personal facebook information
   componentClicked = () => {
     console.log("clicked")
   }
@@ -27,6 +26,7 @@ class App extends Component {
   }
   render() {
     let facebookContent;
+    //If logged into the app show the these following components
     if (this.state.isLoggedIn) {
       return (
         <div className="profile">
@@ -36,7 +36,6 @@ class App extends Component {
           <nav className="navbar">
           <span><img src={this.state.avatar} alt="avatar face" /></span>
             <li className="navbar--list">Hello, {this.state.name}</li>
-            {/* <li className="navbar--list"></li> */}
           </nav>
           <section>
           <Cities></Cities>
@@ -45,7 +44,7 @@ class App extends Component {
       )
 
     } else {
-      
+      //Show the signin button
       facebookContent = (<FacebookLogin
         appId={FACEBOOK_KEY}
         autoLoad={true}
@@ -55,6 +54,7 @@ class App extends Component {
         
     }
     return (
+      //rendered if statement from above
       <div className="App">
         {facebookContent}
       </div>

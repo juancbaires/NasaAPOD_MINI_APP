@@ -4,6 +4,8 @@ import axios from 'axios'
 import { fbButton } from 'vanilla-sharing';
 const API_KEY = process.env.REACT_APP_NASA_API_KEY
 
+
+//Setting state of the Apod componenet
 class APOD extends Component {
     state = {
         imageHD: '',
@@ -13,8 +15,8 @@ class APOD extends Component {
         title: '',
     }
 
+    // Api Call to nasa's Pic of the day
     componentWillMount() {
-
         axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`, {
         }).then(res => {
             this.setState({
@@ -27,6 +29,9 @@ class APOD extends Component {
         })
     }
 
+    //This function **TODO**
+    // Will make a post once my app has a url to post the picture, title, and image of the day to 
+    // the account of the person logged in
     handleClick = () => {
         fbButton({
             url: 'https://alexey-avdeev.com/vanilla-sharing/',
