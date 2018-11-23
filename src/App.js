@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import FacebookLogin from 'react-facebook-login';
-import Cities from "./Components/Cities/Cities"
+import Cities from "./Components/APOD/APOD"
 class App extends Component {
   state = {
     isLoggedIn: false,
@@ -31,10 +31,6 @@ class App extends Component {
         <div className="profile">
           <div className="profile--
             list">
-            {/* <form>
-              <label>Enter your city</label>
-              <input onChange={this.handleChange} type="text" name='city' placeholder="search city"></input>
-            </form> */}
           </div>
           <nav className="navbar">
           <span><img src={this.state.avatar} alt="avatar face" /></span>
@@ -48,17 +44,18 @@ class App extends Component {
       )
 
     } else {
+      
       facebookContent = (<FacebookLogin
         appId="2049150265148471"
         autoLoad={true}
         fields="name,email,picture"
         onClick={this.componentClicked}
         callback={this.responseFacebook} />)
+        
     }
     return (
       <div className="App">
         {facebookContent}
-
       </div>
     );
   }

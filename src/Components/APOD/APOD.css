@@ -1,0 +1,78 @@
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    border: 1px solid #939191;
+    border-radius: 5px;
+}
+
+h1 {
+    color: black;
+}
+
+img {
+    height: 400px;
+    width: 550px;
+}
+
+.search img {
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.about {
+    width: 550px;
+}
+
+.nasa-card {
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 6px;
+    margin: 15px auto;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.facebook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i {
+    background-color: #3b5998;
+    padding: 25px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    align-self: center;
+    font-size: 34px;
+}
+
+i::before {
+    color: white !important;
+    border-radius: 50%;
+}
