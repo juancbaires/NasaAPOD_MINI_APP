@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './APOD.css'
 import axios from 'axios'
-import { fbButton } from 'vanilla-sharing';
+import { fbButton, pinterest } from 'vanilla-sharing';
 const API_KEY = process.env.REACT_APP_NASA_API_KEY
+const FACEBOOK_KEY = process.env.REACT_APP_FACEBOOK_KEY
 
 
 //Setting state of the Apod componenet
@@ -32,12 +33,21 @@ class APOD extends Component {
     //This function **TODO**
     // Will make a post once my app has a url to post the picture, title, and image of the day to 
     // the account of the person logged in
-    handleClick = () => {
+    handleFacebookClick = () => {
         fbButton({
+            app_id: FACEBOOK_KEY,
             url: 'https://npod.surge.sh/',
+            source: this.state.imageHD,
         });
     }
-    //share on facebook open graph tags 
+    //share on pinterest
+    handlePinterstClick = () => {
+        pinterest({
+            url: 'https://npod.surge.sh/',
+            description: this.state.about,
+            media: this.state.imageHD,
+        })
+    }
 
     render() {
 
@@ -53,10 +63,14 @@ class APOD extends Component {
                             <h2>{this.state.copyrightAuthor}</h2>
                             <p>{this.state.date}</p>
                             {this.state.about}</div>
-                        <a href="#" className="facebook"><i onClick={this.handleClick} className="fab fa-facebook-f"></i></a>
+                        <div className="socialShare">
+                            <a href="#" className="facebook"><i onClick={this.handleFacebookClick} className="fab fa-facebook-f"></i></a>
+                            <a href="#" className="pinterest"><i onClick={this.handlePinterstClick} className="fab fa-pinterest"></i></a>
+                        </div>
                     </section>
+
                 </div>
-            </div>
+            </div >
         );
     }
 }
