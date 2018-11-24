@@ -34,7 +34,7 @@ class APOD extends Component {
     // the account of the person logged in
     handleClick = () => {
         fbButton({
-            url: 'https://alexey-avdeev.com/vanilla-sharing/',
+            url: 'https://npod.surge.sh/',
         });
     }
     //share on facebook open graph tags 
@@ -53,8 +53,7 @@ class APOD extends Component {
                             <h2>{this.state.copyrightAuthor}</h2>
                             <p>{this.state.date}</p>
                             {this.state.about}</div>
-                        <a href="facebook"><i onClick={this.handleClick} className="fab fa-facebook-f"></i></a>
-
+                        <a href="#" className="facebook"><i onClick={this.handleClick} className="fab fa-facebook-f"></i></a>
                     </section>
                 </div>
             </div>
